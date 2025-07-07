@@ -166,16 +166,14 @@ function renderContent(lang) {
         }).join('');
     }
 
-    const contactContainer = document.getElementById('contact-container');
-    if(contactContainer) {
-        contactContainer.innerHTML = `<div class="flex items-center text-slate-600"><i data-lucide="mail" class="w-5 h-5 mr-3 
-        text-cyan-600"></i><a href="mailto:${content.contactEmail}" class="hover:text-cyan-600 transition-colors">
-        ${content.contactEmail}</a></div><div class="flex items-center text-slate-600"><i data-lucide="phone" class="w-5 h-5 mr-3 
-        text-cyan-600"></i><span>${content.contactPhone}</span></div>`;
-    }
-
-    document.title = content.pageTitle;
-    lucide.createIcons();
+const contactContainer = document.getElementById('contact-container');
+if(contactContainer) {
+    contactContainer.innerHTML = `<div class="flex items-center text-slate-600"><i data-lucide="mail" class="w-5 h-5 mr-3 
+    text-cyan-600"></i><a href="mailto:${content.contactEmail}" class="hover:text-cyan-600 transition-colors">
+    ${content.contactEmail}</a></div><div class="flex items-center text-slate-600"><i data-lucide="phone" class="w-5 h-5 mr-3 
+    text-cyan-600"></i><span>${content.contactPhone}</span></div><div class="flex items-center text-slate-600">
+    <i data-lucide="whatsapp" class="w-5 h-5 mr-3 text-cyan-600"></i><a href="${content.contactWhatsapp}" target="_blank" rel="noopener 
+    noreferrer" class="hover:text-cyan-600 transition-colors">WhatsApp</a></div>`;
 }
 
 function router() {
