@@ -24,13 +24,13 @@
     "viewRepoLink": "Repositório",
     "projects": [
       { 
-        "title": "Dashboard Financeiro com Next.js", 
+        "title": "Portifólio - Daniel Riêgo | Full Stack", 
         "description": [
-          "Uma aplicação de dashboard interativa construída com Next.js, ",
-          "apresentando dados financeiros de forma visual e intuitiva."
-        ], 
-        "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard", 
-        "repo": "https://github.com/danielriegoor/nextjs-dashboard" 
+          "O código por trás desta página. ",
+          "Sinta-se à vontade para explorar. "
+        ],
+        "link": "https://danielriegoor.github.io/DR-Portifolio/",
+        "repo": "https://github.com/danielriegoor/DR-Portifolio"
       },
       { 
         "title": "forkDRcodes - Coleção de Códigos", 
@@ -40,6 +40,15 @@
         ],
         "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
+      { 
+        "title": "Dashboard Financeiro com Next.js", 
+        "description": [
+          "Uma aplicação de dashboard interativa construída com Next.js, ",
+          "apresentando dados financeiros de forma visual e intuitiva."
+        ], 
+        "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard", 
+        "repo": "https://github.com/danielriegoor/nextjs-dashboard" 
       }
     ],
     "blogTitle": "Últimos Artigos",
@@ -124,6 +133,24 @@
     "viewProjectLink": "View project",
     "viewRepoLink": "Repository",
     "projects": [
+            { 
+        "title": "Portfolio - Daniel Riêgo | Full Stack", 
+        "description": [
+          "A personal repository that serves as a collection of useful codes, scripts, and configurations ",
+          "for various projects and technologies."
+        ],
+        "link": "https://danielriegoor.github.io/DR-Portifolio/",
+        "repo": "https://github.com/danielriegoor/DR-Portifolio"
+      },
+            { 
+        "title": "forkDRcodes - Code Collection", 
+        "description": [
+          "The code for this very portfolio. ",
+          "Go ahead, explore the source."
+        ],
+        "link": "https://github.com/danielriegoor/forkDRcodes",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
       { 
         "title": "Financial Dashboard with Next.js", 
         "description": [
@@ -132,15 +159,6 @@
         ], 
         "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard", 
         "repo": "https://github.com/danielriegoor/nextjs-dashboard" 
-      },
-      { 
-        "title": "forkDRcodes - Code Collection", 
-        "description": [
-          "A personal repository that serves as a collection of useful codes, scripts, and configurations ",
-          "for various projects and technologies."
-        ],
-        "link": "https://github.com/danielriegoor/forkDRcodes",
-        "repo": "https://github.com/danielriegoor/forkDRcodes"
       }
     ],
     "blogTitle": "Latest Articles",
