@@ -136,8 +136,8 @@
             { 
         "title": "Portfolio - Daniel Riêgo | Full Stack", 
         "description": [
-          "A personal repository that serves as a collection of useful codes, scripts, and configurations ",
-          "for various projects and technologies."
+          "The code for this very portfolio. ",
+          "Go ahead, explore the source."
         ],
         "link": "https://danielriegoor.github.io/DR-Portifolio/",
         "repo": "https://github.com/danielriegoor/DR-Portifolio"
@@ -145,8 +145,8 @@
             { 
         "title": "forkDRcodes - Code Collection", 
         "description": [
-          "The code for this very portfolio. ",
-          "Go ahead, explore the source."
+          "A personal repository that serves as a collection of useful codes, scripts, and configurations. ",
+          "for various projects and technologies."
         ],
         "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
