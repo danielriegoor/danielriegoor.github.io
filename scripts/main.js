@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 let animationFrameId;
 
 // NOVAS VARIÁVEIS PARA CONTROLE DE VELOCIDADE
-let fpsInterval = 1000 / 0.1; // 15 frames por segundo. Aumente o 15 para mais rápido, diminua para mais lento.
+let fpsInterval = 1000 / 0.1; //
 let then = Date.now();
 let startTime = then;
 
