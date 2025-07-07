@@ -17,7 +17,7 @@
     "skillsTitle": "Principais Habilidades",
     "skills": [
       "TypeScript", "React.js", "Next.js", "Node.js", "HTML5", "CSS3", "Tailwind CSS", 
-      "JavaScript (ES6+)", "Git", "GitHub", "PostgreSQL", "UI/UX", "CI/CD", "JIT", "SPA"
+      "JavaScript (ES6+)", "Git", "GitHub", "GitCLI", "PostgreSQL", "UI/UX", "CI/CD", "JIT", "SPA"
     ],
     "projectsTitle": "Projetos em Destaque",
     "viewProjectLink": "Ver projeto",
@@ -117,7 +117,7 @@
     "skillsTitle": "Main Skills",
     "skills": [
       "TypeScript", "React.js", "Next.js", "Node.js", "HTML5", "CSS3", "Tailwind CSS", 
-      "JavaScript (ES6+)", "Git", "GitHub", "PostgreSQL", "UI/UX", "CI/CD", "JIT", "SPA"
+      "JavaScript (ES6+)", "Git", "GitHub", "GitCLI", "PostgreSQL", "UI/UX", "CI/CD", "JIT", "SPA"
     ],
     "projectsTitle": "Featured Projects",
     "viewProjectLink": "View project",
