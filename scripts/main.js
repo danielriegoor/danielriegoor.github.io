@@ -159,7 +159,8 @@ function renderContent(lang) {
     }
             return `<div class="bg-white/90 p-4 rounded-lg border border-slate-200
              hover:border-cyan-400 hover:shadow-md transition-all duration-300"><h3 class="font-bold text-lg 
-             text-slate-800">${titleHtml}</h3><p class="text-sm text-slate-500 mt-1 mb-3">${descriptionHtml.replace(/\n/g, '<br>')}</p><a href="${p.link}" 
+             text-slate-800">${titleHtml}</h3><p class="text-sm text-slate-500 mt-1 mb-3">${descriptionHtml.replace(/\n/g, '<br>')}</p><a href="${p.link}"
+             target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center text-sm text-cyan-600 hover:text-cyan-700 font-semibold">${content.readArticleLink} 
              <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a></div>`;
         }).join('');
