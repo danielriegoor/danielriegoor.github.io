@@ -97,7 +97,8 @@
       "Sinta-se à vontade para me contatar através dos canais abaixo."
     ],
     "contactPhone": "+55 (31) 99378-9275",
-    "contactEmail": "danielriegoor@gmail.com"
+    "contactEmail": "danielriegoor@gmail.com",
+    "contactWhatsapp": "https://wa.me/message/NZN3JXOTE6FQD1"
   },
   "en": {
     "pageTitle": "Daniel Riêgo | Full Stack Developer",
@@ -196,6 +197,7 @@
       "Feel free to contact me through the channels below."
     ],
     "contactPhone": "+55 (31) 99378-9275",
-    "contactEmail": "danielriegoor@gmail.com"
+    "contactEmail": "danielriegoor@gmail.com",
+    "contactWhatsapp": "https://wa.me/message/NZN3JXOTE6FQD1"
   }
 }
