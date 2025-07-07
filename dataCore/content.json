@@ -35,8 +35,8 @@
       { 
         "title": "forkDRcodes - Coleção de Códigos", 
         "description": [
-          "Um repositório pessoal que serve como uma coleção de códigos, scripts e configurações úteis ",
-          "para diversos projetos e tecnologias."
+          "Meu toolkit de desenvolvedor: ",
+          "Coleções de códigos, scripts e configurações reutilizáveis."
         ],
         "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
@@ -44,8 +44,7 @@
       { 
         "title": "Dashboard Financeiro com Next.js", 
         "description": [
-          "Uma aplicação de dashboard interativa construída com Next.js, ",
-          "apresentando dados financeiros de forma visual e intuitiva."
+          "Dashboard financeiro interativo em Next.js para uma análise visual e intuitiva de dados. "
         ], 
         "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard", 
         "repo": "https://github.com/danielriegoor/nextjs-dashboard" 
@@ -61,8 +60,7 @@
   "description": [
   
      { "type": "text", "value": [
-       "mailORganizer é um aplicativo de gerenciamento de e-mails que visa simplificar a organização e o acesso às mensagens. ",
-       "Desenvolvido em #Python e utilizando o #WorkSmart em conjunto com a Arquitetura de Prompt de IA (Gemini PRO 2.5)." 
+       "mailORganizer: E-mails organizados com o poder de Python e IA (Gemini 2.5). "
   ]}
 ],
   "link": "https://bit.ly/4lBUil1" 
@@ -74,8 +72,8 @@
   "description": [
   
      { "type": "text", "value": [
-       "Aqui, falamos sobre o progresso e a evolução que temos feito na carreira de DEV. ",
-       "Um artigo interessante que aborda tópicos do caminho das linguaguens que todo futuro DEV Full Stack, deve saber." 
+       "Jornada Full Stack: ",
+       "Um artigo sobre evolução de carreira e as linguagens essenciais para todo DEV." 
   ]}
 ],
   "link": "https://bit.ly/4lBUil1" 
@@ -87,8 +85,8 @@
   "description": [
   
      { "type": "text", "value": [
-       "Neste artigo, discutimos a importância da concatenação do trabalho duro com a eficiência. ",
-       "Compartilhamos insights sobre nossa trajetória e evolução em DEV." 
+       "Work hard vs. work smart: ",
+       " insights e lições da nossa jornada DEV." 
   ]},
     { "type": "text", "value": " Nos próximos Links, você encontra nossos perfis do LinkedIn.\n\n" },
     { "type": "link", "value": " Daniel Riêgo ", "url": "https://www.linkedin.com/in/danielriegoor/" },
@@ -145,8 +143,8 @@
             { 
         "title": "forkDRcodes - Code Collection", 
         "description": [
-          "A personal repository that serves as a collection of useful codes, scripts, and configurations. ",
-          "for various projects and technologies."
+          "My developer toolkit: ",
+          "Collections of reusable code, scripts, and configs."
         ],
         "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
@@ -154,8 +152,7 @@
       { 
         "title": "Financial Dashboard with Next.js", 
         "description": [
-          "An interactive dashboard application built with Next.js, ",
-          "presenting financial data in a visual and intuitive way."
+          "Interactive financial dashboard built with Next.js for intuitive data visualization. "
         ], 
         "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard", 
         "repo": "https://github.com/danielriegoor/nextjs-dashboard" 
@@ -171,8 +168,7 @@
   "description": [
   
      { "type": "text", "value": [
-       "mailOrganizer: an email management app focused on simplifying message organization and access. ",
-       "Developed in #Python, using the #WorkSmart framework with AI Prompt Architecture (Gemini PRO 2.5)." 
+       "mailORganizer: Smart email organization powered by Python & AI (Gemini 2.5). "
   ]}
 ],
   "link": "https://bit.ly/4lBUil1" 
@@ -184,8 +180,8 @@
   "description": [
   
      { "type": "text", "value": [
-       "We're talking about the progress and growth we've experienced in our developer careers. ",
-       "It's an insightful article that outlines the language roadmap every aspiring Full Stack Developer needs to master." 
+       "The Full-Stack Journey:",
+       "An article on dev career growth and the essential languages." 
   ]}
 ],
   "link": "https://bit.ly/4lBUil1" 
@@ -197,8 +193,8 @@
   "description": [
   
      { "type": "text", "value": [
-       "This article explores the crucial link between hard work and efficiency. ",
-       "We share insights on our trajectory and evolution as DEV professionals." 
+       "Work hard vs. work smart: ",
+       "insights and lessons from our dev journey." 
   ]},
     { "type": "text", "value": " Find our LinkedIn profiles below. \n\n" },
     { "type": "link", "value": " Daniel Riêgo ", "url": "https://www.linkedin.com/in/danielriegoor/" },
