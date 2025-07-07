@@ -63,7 +63,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 // Carrega os dados do arquivo JSON
 async function fetchContentData() {
     try {
-        const response = await fetch('/DR-Portfolio/data/content.json');
+        const response = await fetch('/DR-Portfolio/dataCore/content.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
