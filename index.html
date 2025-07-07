@@ -5,23 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Metadados Essenciais -->
-    <title>Daniel Riego | Desenvolvedor Full Stack</title>
-    <meta name="description" 
-    content="Portfólio de Daniel Riego, um desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Conheça meus projetos e habilidades.">
-    <meta name="keywords" content="Daniel Riego, Desenvolvedor, Full Stack, Front-End, Back-End, TypeScript, React, Node.js, Portfólio, Projetos">
+    <title>Daniel Riêgo
+         | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Daniel Riego, 
+    um desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Conheça meus projetos, artigos e habilidades.">
+    <meta name="keywords" content="Daniel Riego, Desenvolvedor, Full Stack, Blog, Portfólio, Projetos, React, Node.js, TypeScript">
     <meta name="author" content="Daniel Riego">
-    <link rel="canonical" href="https://danielriegoor.github.io/portfolio/"> <!-- Altere para seu link final -->
+    <link rel="canonical" href="https://danielriegoor.github.io/portfolio/">
 
     <!-- Open Graph (OG) para Redes Sociais -->
-    <meta property="og:title" content="Daniel Riego | Desenvolvedor Full Stack">
-    <meta property="og:description" content="Portfólio de Daniel Riego, um desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes.">
+    <meta property="og:title" content="Daniel Riego
+     | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Explore os projetos e artigos de Daniel Riego, 
+    um desenvolvedor Full Stack apaixonado por tecnologia.">
     <meta property="og:image" content="https://github.com/danielriegoor.png">
-    <meta property="og:url" content="https://danielriegoor.github.io/portfolio/"> <!-- Altere para seu link final -->
+    <meta property="og:url" content="https://danielriegoor.github.io/portfolio/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
 
-    <!-- Script Tailwind -->
-    <link href="output.css" rel="stylesheet">
+    <!-- Carregar o script principal do Tailwind ANTES da configuração -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuração do Tailwind depois de carregar o script -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // A cor agora usa a variável CSS.
+                        'primary-light': 'rgb(var(--primary-light-rgb) / <alpha-value>)'
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Ícones (Lucide Icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -32,29 +49,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilo base para usar a fonte Inter */
+        :root {
+            /* Clique no quadrado de cor do comentário abaixo para abrir a paleta do VSCode. */
+            /* color: rgb(203, 221, 236); */
+            /* MODIFICADO: O valor RGB para #cbddec */
+            --primary-light-rgb: 203 221 236;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
-        /* Efeito de transição suave para elementos de texto */
-        [data-key] {
-            transition: opacity 0.3s ease-in-out;
+        #matrix-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .page-content {
+            transition: opacity 0.4s ease-in-out;
+        }
+        .page-content:not(.active) {
+            display: none;
+        }
+        /* Estilo para o link de navegação ativo com o novo tema claro */
+        .nav-link.active {
+            background-color: rgba(8, 145, 178, 0.1);
+            color: #0e7490;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-300">
+<body class="bg-primary-light text-slate-700">
 
-    <div class="container mx-auto p-4 lg:p-8">
+    <canvas id="matrix-background"></canvas>
+
+    <div class="container mx-auto p-4 lg:p-8 relative z-10">
         <div class="lg:flex lg:space-x-10">
 
             <!-- Sidenav (Barra Lateral) -->
             <aside class="lg:w-1/3 xl:w-1/4 mb-8 lg:mb-0 lg:sticky top-8 self-start">
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <div class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-slate-200/80">
                     <div class="flex items-center justify-between mb-4">
-                        <h1 class="text-2xl font-bold text-white">Daniel Riego</h1>
-                        <!-- Botões de Idioma -->
+                        <h1 class="text-2xl font-bold text-slate-900">Daniel Riêgo</h1>
                         <div class="flex space-x-2">
                             <button id="lang-pt" class="p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500 opacity-100">
                                 <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" width="20" alt="Bandeira do Brasil">
@@ -64,257 +105,101 @@
                             </button>
                         </div>
                     </div>
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700 object-cover" 
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover shadow-md" 
                     src="https://github.com/danielriegoor.png" alt="Foto de Perfil de Daniel Riego">
-                    <h2 class="text-center text-xl font-semibold text-white" data-key="jobTitle"></h2>
-                    <p class="text-center text-sm text-cyan-400 mt-1" data-key="location"></p>
+                    <h2 class="text-center text-xl font-semibold text-slate-900" data-key="jobTitle"></h2>
+                    <p class="text-center text-sm text-cyan-600 mt-1" data-key="location"></p>
                     
-                    <div class="mt-6 border-t border-gray-700 pt-6">
-                        <h3 class="text-lg font-semibold text-white mb-3" data-key="contactTitle"></h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center">
-                                <i data-lucide="mail" class="w-5 h-5 mr-3 text-cyan-400"></i>
-                                <a href="mailto:danielriegoor@gmail.com" class="hover:text-cyan-400 transition-colors">danielriegoor@gmail.com</a>
-                            </div>
-                             <div class="flex items-center">
-                                <i data-lucide="phone" class="w-5 h-5 mr-3 text-cyan-400"></i>
-                                <span data-key="phone"></span>
-                            </div>
-                        </div>
-                    </div>
+                    <nav class="mt-8 space-y-2">
+                        <a href="#home" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 
+                        hover:text-slate-800 transition-colors duration-200">
+                            <i data-lucide="home" class="w-5 h-5 mr-3"></i>
+                            <span data-key="navHome"></span>
+                        </a>
+                        <a href="#portfolio" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
+                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                            <i data-lucide="folder-git-2" class="w-5 h-5 mr-3"></i>
+                            <span data-key="navPortfolio"></span>
+                        </a>
+                        <a href="#blog" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
+                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                            <i data-lucide="notebook-pen" class="w-5 h-5 mr-3"></i>
+                            <span data-key="navBlog"></span>
+                        </a>
+                        <a href="#contact" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
+                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                            <span data-key="navContact"></span>
+                        </a>
+                    </nav>
 
-                    <!-- Redes Sociais -->
-                    <div class="mt-6 border-t border-gray-700 pt-6 flex justify-center space-x-5">
+                    <div class="mt-8 border-t border-slate-200 pt-6 flex justify-center space-x-5">
                         <a href="https://www.linkedin.com/in/danielriegoor/" target="_blank" rel="noopener noreferrer" 
-                        class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
                         <a href="https://github.com/danielriegoor/" target="_blank" rel="noopener noreferrer" 
-                        class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github" class="w-7 h-7"></i></a>
+                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="github" class="w-7 h-7"></i></a>
                         <a href="https://www.instagram.com/danielriegoor" target="_blank" rel="noopener noreferrer" 
-                        class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-7 h-7"></i></a>
-                        <a href="https://www.facebook.com/riegodaniel" target="_blank" rel="noopener noreferrer" 
-                        class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-7 h-7"></i></a>
+                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="instagram" class="w-7 h-7"></i></a>
                     </div>
                 </div>
             </aside>
 
-            <!-- Conteúdo Principal -->
             <main class="lg:w-2/3 xl:w-3/4">
                 <div class="space-y-8">
-                    <!-- Seção Sobre Mim -->
-                    <article class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                            <i data-lucide="user-round" class="w-6 h-6 mr-3 text-cyan-400"></i>
-                            <span data-key="aboutTitle"></span>
-                        </h2>
-                        <section>
-                            <p class="leading-relaxed" data-key="aboutContent"></p>
-                        </section>
-                    </article>
-
-                    <!-- Seção de Habilidades -->
-                    <article class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                            <i data-lucide="sparkles" class="w-6 h-6 mr-3 text-cyan-400"></i>
-                            <span data-key="skillsTitle"></span>
-                        </h2>
-                        <section id="skills-container" class="flex flex-wrap gap-3">
-                            <!-- Habilidades serão inseridas aqui pelo JS -->
-                        </section>
-                    </article>
-
-                    <!-- Seção de Projetos -->
-                    <article class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-                        <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                            <i data-lucide="folder-git-2" class="w-6 h-6 mr-3 text-cyan-400"></i>
-                            <span data-key="projectsTitle"></span>
-                        </h2>
-                        <div id="projects-container" class="space-y-6">
-                            <!-- Projetos serão inseridos aqui -->
-                        </div>
-                    </article>
+                    <!-- PÁGINA: INÍCIO -->
+                    <div id="page-home" class="page-content space-y-8">
+                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                                <i data-lucide="user-round" class="w-6 h-6 mr-3 text-cyan-600"></i>
+                                <span data-key="aboutTitle"></span>
+                            </h2>
+                            <section class="space-y-4 leading-relaxed text-slate-600" data-key="aboutContent"></section>
+                        </article>
+                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                                <i data-lucide="sparkles" class="w-6 h-6 mr-3 text-cyan-600"></i>
+                                <span data-key="skillsTitle"></span>
+                            </h2>
+                            <section id="skills-container" class="flex flex-wrap gap-3"></section>
+                        </article>
+                    </div>
+                    <!-- PÁGINA: PORTFÓLIO -->
+                    <div id="page-portfolio" class="page-content space-y-8">
+                         <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                                <i data-lucide="folder-git-2" class="w-6 h-6 mr-3 text-cyan-600"></i>
+                                <span data-key="projectsTitle"></span>
+                            </h2>
+                            <div id="projects-container" class="space-y-6"></div>
+                        </article>
+                    </div>
+                    <!-- PÁGINA: BLOG -->
+                    <div id="page-blog" class="page-content space-y-8">
+                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                                <i data-lucide="notebook-pen" class="w-6 h-6 mr-3 text-cyan-600"></i>
+                                <span data-key="blogTitle"></span>
+                            </h2>
+                            <div id="blog-container" class="space-y-6"></div>
+                        </article>
+                    </div>
+                    <!-- PÁGINA: CONTATO -->
+                    <div id="page-contact" class="page-content space-y-8">
+                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                                <i data-lucide="mail-check" class="w-6 h-6 mr-3 text-cyan-600"></i>
+                                <span data-key="contactTitle"></span>
+                            </h2>
+                            <p class="mb-6 text-slate-600" data-key="contactIntro"></p>
+                            <div id="contact-container" class="space-y-4"></div>
+                        </article>
+                    </div>
                 </div>
             </main>
         </div>
     </div>
 
-    <script type="module">
-        // Inicializa os ícones do Lucide
-        lucide.createIcons();
-
-        // --- LÓGICA DE CARREGAMENTO DE DADOS E IDIOMA ---
-
-        const langPtBtn = document.getElementById('lang-pt');
-        const langEnBtn = document.getElementById('lang-en');
-
-        const pageData = {
-          "pt": {
-            "pageTitle": "Daniel Riego | Desenvolvedor Full Stack",
-            "jobTitle": "Desenvolvedor Full Stack",
-            "location": "Brasil",
-            "contactTitle": "Contato",
-            "phone": "+55 (31) 99378-9275",
-            "aboutTitle": "Sobre Mim",
-            // MODIFICAÇÃO: Adicionado '\n\n' para criar um parágrafo no texto.
-            "aboutContent": "Desenvolvedor Full Stack com sólida experiência em criar aplicações web robustas e escaláveis." + 
-            "\n\nApaixonado por tecnologia e por transformar ideias em soluções digitais eficientes, com foco em performance e na experiência do usuário." + 
-            " Estou sempre em busca de novos desafios e aprendizados para aprimorar minhas habilidades.",
-            "skillsTitle": "Principais Habilidades",
-            "skills": [
-              "TypeScript", "React.js", "Next.js", "Node.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript (ES6+)", "Git", "GitCLI", "GitHub", "PostgreeSQL", "UI/UX", "CI/CD"
-            ],
-            "projectsTitle": "Projetos em Destaque",
-            "viewProjectLink": "Ver projeto",
-            "viewRepoLink": "Repositório",
-            "projects": [
-              {
-                "title": "Dashboard Financeiro com Next.js",
-                "description": "Uma aplicação de dashboard interativa construída com Next.js, apresentando dados financeiros de forma visual e intuitiva.",
-                "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard",
-                "repo": "https://github.com/danielriegoor/nextjs-dashboard"
-              },
-              {
-                "title": "forkDRcodes - Coleção de Códigos",
-                "description": "Um repositório pessoal que serve como uma coleção de códigos, scripts e configurações úteis para diversos projetos e tecnologias.",
-                "link": "https://github.com/danielriegoor/forkDRcodes",
-                "repo": "https://github.com/danielriegoor/forkDRcodes"
-              }
-            ]
-          },
-          "en": {
-            "pageTitle": "Daniel Riego | Full Stack Developer",
-            "jobTitle": "Full Stack Developer",
-            "location": "Brazil",
-            "contactTitle": "Contact",
-            "phone": "+55 (31) 99378-9275",
-            "aboutTitle": "About Me",
-            // MODIFICAÇÃO: Adicionado '\n\n' para criar um parágrafo no texto em inglês.
-            "aboutContent": "Full Stack Developer with solid experience in creating robust and scalable web applications.\n\n" + 
-            "Passionate about technology and turning ideas into efficient digital solutions, focusing on performance and user experience." + 
-            " I am always seeking new challenges and learning opportunities to enhance my skills.",
-            "skillsTitle": "Main Skills",
-            "skills": [
-              "TypeScript", "React.js", "Next.js", "Node.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript (ES6+)", "Git", "GitCLI", "GitHub", "PostgreeSQL", "UI/UX", "CI/CD"
-            ],
-            "projectsTitle": "Featured Projects",
-            "viewProjectLink": "View project",
-            "viewRepoLink": "Repository",
-            "projects": [
-              {
-                "title": "Financial Dashboard with Next.js",
-                "description": "An interactive dashboard application built with Next.js, presenting financial data in a visual and intuitive way.",
-                "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard",
-                "repo": "https://github.com/danielriegoor/nextjs-dashboard"
-              },
-              {
-                "title": "forkDRcodes - Code Collection",
-                "description": "A personal repository that serves as a collection of useful codes, scripts, and configurations for various projects and technologies.",
-                "link": "https://github.com/danielriegoor/forkDRcodes",
-                "repo": "https://github.com/danielriegoor/forkDRcodes"
-              }
-            ]
-          }
-        };
-
-        // Função para buscar dados e atualizar a UI
-        function updateContent(lang = 'pt') {
-            try {
-                const content = pageData[lang];
-
-                // Atualiza todos os elementos de texto com o atributo 'data-key'
-                document.querySelectorAll('[data-key]').forEach(element => {
-                    const key = element.getAttribute('data-key');
-                    if (content[key]) {
-                        element.style.opacity = 0;
-                        setTimeout(() => {
-                            // CORREÇÃO: Substitui quebras de linha (\n) por tags <br> para renderização no HTML.
-                            element.innerHTML = content[key].toString().replace(/\n/g, '<br>');
-                            element.style.opacity = 1;
-                        }, 150);
-                    }
-                });
-
-                // Atualiza o container de habilidades
-                const skillsContainer = document.getElementById('skills-container');
-                skillsContainer.innerHTML = ''; // Limpa antes de adicionar
-                content.skills.forEach(skill => {
-                    const skillElement = document.createElement('span');
-                    skillElement.className = 'bg-cyan-900/50 text-cyan-300 text-sm font-medium px-3 py-1 rounded-full';
-                    skillElement.textContent = skill;
-                    skillsContainer.appendChild(skillElement);
-                });
-
-                // Atualiza o container de projetos
-                const projectsContainer = document.getElementById('projects-container');
-                projectsContainer.innerHTML = ''; // Limpa antes de adicionar
-                content.projects.forEach(project => {
-                    const projectCard = `
-                        <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700 hover:border-cyan-500 
-                        transition-all duration-300">
-                            <h3 class="font-bold text-lg text-white">${project.title}</h3>
-                            <p class="text-sm text-gray-400 mt-1 mb-3">${project.description}</p>
-                            <div class="flex items-center space-x-4">
-                                <a href="${project.link}" target="_blank" rel="noopener noreferrer" 
-                                class="inline-flex items-center text-sm text-cyan-400 hover:text-cyan-300 font-semibold">
-                                    <span data-key="viewProjectLink"></span>
-                                    <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
-                                </a>
-                                ${project.repo ? `
-                                <a href="${project.repo}" target="_blank" rel="noopener noreferrer" 
-                                class="inline-flex items-center text-sm text-gray-400 hover:text-white font-semibold">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i>
-                                    <span data-key="viewRepoLink"></span>
-                                </a>` : ''}
-                            </div>
-                        </div>
-                    `;
-                    projectsContainer.innerHTML += projectCard;
-                });
-                
-                // Atualiza os textos dos links dos projetos
-                document.querySelectorAll('[data-key="viewProjectLink"]').forEach(el => el.textContent = content.viewProjectLink);
-                document.querySelectorAll('[data-key="viewRepoLink"]').forEach(el => el.textContent = content.viewRepoLink);
-
-
-                // Atualiza o título da página
-                document.title = content.pageTitle;
-                
-                // Re-cria os ícones após adicionar novos elementos dinamicamente
-                lucide.createIcons();
-
-            } catch (error) {
-                console.error("Falha ao carregar o conteúdo da página:", error);
-                document.querySelector('main').innerHTML = '<p class="text-red-500">Erro ao carregar dados. Tente recarregar a página.</p>';
-            }
-        }
-
-        // Função para definir o idioma ativo
-        function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-            
-            if (lang === 'pt') {
-                langPtBtn.classList.add('opacity-100');
-                langPtBtn.classList.remove('opacity-50');
-                langEnBtn.classList.add('opacity-50');
-                langEnBtn.classList.remove('opacity-100');
-                document.documentElement.lang = 'pt-BR';
-            } else {
-                langEnBtn.classList.add('opacity-100');
-                langEnBtn.classList.remove('opacity-50');
-                langPtBtn.classList.add('opacity-50');
-                langPtBtn.classList.remove('opacity-100');
-                document.documentElement.lang = 'en-US';
-            }
-            updateContent(lang);
-        }
-
-        // Adiciona listeners aos botões
-        langPtBtn.addEventListener('click', () => setLanguage('pt'));
-        langEnBtn.addEventListener('click', () => setLanguage('en'));
-
-        // Carrega o conteúdo inicial com o idioma salvo ou o padrão ('pt')
-        const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
-        setLanguage(savedLang);
-      // Force redeploy
-    </script>
+    <!-- Carrega o script principal do aplicativo -->
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 </html>
