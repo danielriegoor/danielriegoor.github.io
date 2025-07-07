@@ -23,6 +23,15 @@
     "viewProjectLink": "Ver projeto",
     "viewRepoLink": "Repositório",
     "projects": [
+        { 
+        "title": "mailOrganizer - OneClick Tool", 
+        "description": [
+          "Sua caixa de entrada do Gmail a um clique da organização completa! ",
+          "Experimente! "
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
       { 
         "title": "Portifólio - Daniel Riêgo | Full Stack", 
         "description": [
@@ -38,7 +47,6 @@
           "Meu toolkit de desenvolvedor: ",
           "Coleções de códigos, scripts e configurações reutilizáveis."
         ],
-        "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
       },
       { 
@@ -131,6 +139,15 @@
     "viewProjectLink": "View project",
     "viewRepoLink": "Repository",
     "projects": [
+        { 
+        "title": "mailOrganizer - OneClick Tool", 
+        "description": [
+          "Your Gmail mailbox is one click away!",
+          "Try it on!"
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
             { 
         "title": "Portfolio - Daniel Riêgo | Full Stack", 
         "description": [
@@ -146,7 +163,6 @@
           "My developer toolkit: ",
           "Collections of reusable code, scripts, and configs."
         ],
-        "link": "https://github.com/danielriegoor/forkDRcodes",
         "repo": "https://github.com/danielriegoor/forkDRcodes"
       },
       { 
