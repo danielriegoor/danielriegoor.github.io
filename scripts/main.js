@@ -165,7 +165,6 @@ function renderContent(lang) {
              <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a></div>`;
         }).join('');
     }
-}
 
 const contactContainer = document.getElementById('contact-container');
 if(contactContainer) {
@@ -175,8 +174,10 @@ if(contactContainer) {
     text-cyan-600"></i><span>${content.contactPhone}</span></div><div class="flex items-center text-slate-600">
     <i data-lucide="whatsapp" class="w-5 h-5 mr-3 text-cyan-600"></i><a href="${content.contactWhatsapp}" target="_blank" rel="noopener 
     noreferrer" class="hover:text-cyan-600 transition-colors">WhatsApp</a></div>`;
-}
-
+}  
+    //  Garantindo renderizção do Lucide icon whatsapp
+    lucide.createIcons(); 
+}    
 function router() {
     const hash = window.location.hash || '#home';
     pages.forEach(page => {
