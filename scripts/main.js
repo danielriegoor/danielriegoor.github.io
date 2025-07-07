@@ -165,6 +165,7 @@ function renderContent(lang) {
              <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a></div>`;
         }).join('');
     }
+}
 
 const contactContainer = document.getElementById('contact-container');
 if(contactContainer) {
