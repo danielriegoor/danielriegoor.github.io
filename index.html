@@ -1,209 +1,445 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
     <!-- Metadados Essenciais -->
-    <title>Daniel Riêgo
-         | Desenvolvedor Full Stack</title>
-    <meta name="description" content="Portfólio de Daniel Riego, 
-    um desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Conheça meus projetos, artigos e habilidades.">
-    <meta name="keywords" content="Daniel Riego, Desenvolvedor, Full Stack, Blog, Portfólio, Projetos, React, Node.js, TypeScript">
-    <meta name="author" content="Daniel Riego">
-    <link rel="canonical" href="https://danielriegoor.github.io/portfolio/">
+    <title>
+      Daniel Riêgo | Desenvolvedor Full
+      Stack
+    </title>
+    <meta
+      name="description"
+      content="Portfólio de Daniel Riego, 
+    um desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Conheça meus projetos, artigos e habilidades." />
+    <meta
+      name="keywords"
+      content="Daniel Riego, Desenvolvedor, Full Stack, Blog, Portfólio, Projetos, React, Node.js, TypeScript" />
+    <meta
+      name="author"
+      content="Daniel Riego" />
+    <link
+      rel="canonical"
+      href="https://danielriegoor.github.io/portfolio/" />
 
     <!-- Open Graph (OG) para Redes Sociais -->
-    <meta property="og:title" content="Daniel Riego
-     | Desenvolvedor Full Stack">
-    <meta property="og:description" content="Explore os projetos e artigos de Daniel Riego, 
-    um desenvolvedor Full Stack apaixonado por tecnologia.">
-    <meta property="og:image" content="https://github.com/danielriegoor.png">
-    <meta property="og:url" content="https://danielriegoor.github.io/portfolio/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
+    <meta
+      property="og:title"
+      content="Daniel Riego
+     | Desenvolvedor Full Stack" />
+    <meta
+      property="og:description"
+      content="Explore os projetos e artigos de Daniel Riego, 
+    um desenvolvedor Full Stack apaixonado por tecnologia." />
+    <meta
+      property="og:image"
+      content="https://github.com/danielriegoor.png" />
+    <meta
+      property="og:url"
+      content="https://danielriegoor.github.io/portfolio/" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      property="og:locale"
+      content="pt_BR" />
 
     <!-- Carregar o script principal do Tailwind ANTES da configuração -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Configuração do Tailwind depois de carregar o script -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // A cor agora usa a variável CSS.
-                        'primary-light': 'rgb(var(--primary-light-rgb) / <alpha-value>)'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // A cor agora usa a variável CSS.
+              "primary-light":
+                "rgb(var(--primary-light-rgb) / <alpha-value>)",
+            },
+          },
+        },
+      };
     </script>
 
     <!-- Ícones (Lucide Icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet" />
 
     <style>
-        :root {
-            /* Clique no quadrado de cor do comentário abaixo para abrir a paleta do VSCode. */
-            /* color: rgb(203, 221, 236); */
-            /* MODIFICADO: O valor RGB para #cbddec */
-            --primary-light-rgb: 203 221 236;
-        }
+      :root {
+        /* Clique no quadrado de cor do comentário abaixo para abrir a paleta do VSCode. */
+        /* color: rgb(203, 221, 236); */
+        /* MODIFICADO: O valor RGB para #cbddec */
+        --primary-light-rgb: 203 221 236;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-        }
-        #matrix-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .page-content {
-            transition: opacity 0.4s ease-in-out;
-        }
-        .page-content:not(.active) {
-            display: none;
-        }
-        /* Estilo para o link de navegação ativo com o novo tema claro */
-        .nav-link.active {
-            background-color: rgba(8, 145, 178, 0.1);
-            color: #0e7490;
-            font-weight: 600;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      #matrix-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .page-content {
+        transition: opacity 0.4s
+          ease-in-out;
+      }
+      .page-content:not(.active) {
+        display: none;
+      }
+      /* Estilo para o link de navegação ativo com o novo tema claro */
+      .nav-link.active {
+        background-color: rgba(
+          8,
+          145,
+          178,
+          0.1
+        );
+        color: #0e7490;
+        font-weight: 600;
+      }
     </style>
-</head>
-<body class="bg-primary-light text-slate-700">
+  </head>
+  <body
+    class="bg-primary-light text-slate-700">
+    <canvas
+      id="matrix-background"></canvas>
 
-    <canvas id="matrix-background"></canvas>
+    <div
+      class="container mx-auto p-4 lg:p-8 relative z-10">
+      <div
+        class="lg:flex lg:space-x-10">
+        <!-- Sidenav (Barra Lateral) -->
+        <aside
+          class="lg:w-1/3 xl:w-1/4 mb-8 lg:mb-0 lg:sticky top-8 self-start">
+          <div
+            class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-slate-200/80">
+            <div
+              class="flex items-center justify-between mb-4">
+              <h1
+                class="text-2xl font-bold text-slate-900">
+                Daniel Riêgo
+              </h1>
+              <div
+                class="flex space-x-2">
+                <button
+                  id="lang-pt"
+                  class="p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500 opacity-100">
+                  <img
+                    src="https://flagcdn.com/w20/br.png"
+                    srcset="
+                      https://flagcdn.com/w40/br.png 2x
+                    "
+                    width="20"
+                    alt="Bandeira do Brasil" />
+                </button>
+                <button
+                  id="lang-en"
+                  class="p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500 opacity-50">
+                  <img
+                    src="https://flagcdn.com/w20/us.png"
+                    srcset="
+                      https://flagcdn.com/w40/us.png 2x
+                    "
+                    width="20"
+                    alt="Bandeira dos EUA" />
+                </button>
+              </div>
+            </div>
+            <img
+              class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover shadow-md"
+              src="https://github.com/danielriegoor.png"
+              alt="Foto de Perfil de Daniel Riego" />
+            <h2
+              class="text-center text-xl font-semibold text-slate-900"
+              data-key="jobTitle"></h2>
+            <p
+              class="text-center text-sm text-cyan-600 mt-1"
+              data-key="location"></p>
 
-    <div class="container mx-auto p-4 lg:p-8 relative z-10">
-        <div class="lg:flex lg:space-x-10">
+            <nav class="mt-8 space-y-2">
+              <a
+                href="#home"
+                class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                <i
+                  data-lucide="home"
+                  class="w-5 h-5 mr-3"></i>
+                <span
+                  data-key="navHome"></span>
+              </a>
+              <a
+                href="#blog"
+                class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                <i
+                  data-lucide="notebook-pen"
+                  class="w-5 h-5 mr-3"></i>
+                <span
+                  data-key="navBlog"></span>
+              </a>
+              <a
+                href="#content"
+                class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                <i
+                  data-lucide="book-open-text"
+                  class="w-5 h-5 mr-3"></i>
+                <span
+                  data-key="navContent"></span>
+              </a>
+              <a
+                href="#doc"
+                class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                <i
+                  data-lucide="table-of-contents"
+                  class="w-5 h-5 mr-3"></i>
+                <span
+                  data-key="navDoc"></span>
+              </a>
+              <a
+                href="#projects"
+                class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
+                <i
+                  data-lucide="folder-git-2"
+                  class="w-5 h-5 mr-3"></i>
+                <span
+                  data-key="navProjects"></span>
+              </a>
+            </nav>
 
-            <!-- Sidenav (Barra Lateral) -->
-            <aside class="lg:w-1/3 xl:w-1/4 mb-8 lg:mb-0 lg:sticky top-8 self-start">
-                <div class="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-slate-200/80">
-                    <div class="flex items-center justify-between mb-4">
-                        <h1 class="text-2xl font-bold text-slate-900">Daniel Riêgo</h1>
-                        <div class="flex space-x-2">
-                            <button id="lang-pt" class="p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500 opacity-100">
-                                <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" width="20" alt="Bandeira do Brasil">
-                            </button>
-                            <button id="lang-en" class="p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500 opacity-50">
-                               <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" width="20" alt="Bandeira dos EUA">
-                            </button>
-                        </div>
-                    </div>
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover shadow-md" 
-                    src="https://github.com/danielriegoor.png" alt="Foto de Perfil de Daniel Riego">
-                    <h2 class="text-center text-xl font-semibold text-slate-900" data-key="jobTitle"></h2>
-                    <p class="text-center text-sm text-cyan-600 mt-1" data-key="location"></p>
-                    
-                    <nav class="mt-8 space-y-2">
-                        <a href="#home" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 hover:bg-slate-200/60 
-                        hover:text-slate-800 transition-colors duration-200">
-                            <i data-lucide="home" class="w-5 h-5 mr-3"></i>
-                            <span data-key="navHome"></span>
-                        </a>
-                        <a href="#portfolio" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
-                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
-                            <i data-lucide="folder-git-2" class="w-5 h-5 mr-3"></i>
-                            <span data-key="navPortfolio"></span>
-                        </a>
-                        <a href="#blog" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
-                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
-                            <i data-lucide="notebook-pen" class="w-5 h-5 mr-3"></i>
-                            <span data-key="navBlog"></span>
-                        </a>
-                        <a href="#contact" class="nav-link flex items-center px-4 py-2.5 rounded-lg text-slate-500 
-                        hover:bg-slate-200/60 hover:text-slate-800 transition-colors duration-200">
-                            <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
-                            <span data-key="navContact"></span>
-                        </a>
-                    </nav>
+            <div
+              class="mt-8 border-t border-slate-200 pt-6 flex justify-center space-x-5">
+              <a
+                href="#contact"
+                target="_self"
+                title="Contacts"
+                aria-label="Get in touch"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="contact"
+                  class="w-7 h-7"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/danielriegoor"
+                target="_blank"
+                title="LinkedIn"
+                aria-label="My LinkedIn Profile"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="linkedin"
+                  class="w-7 h-7"></i
+              ></a>
+              <a
+                href="https://github.com/danielriegoor/"
+                target="_blank"
+                title="GitHub"
+                aria-label="My GitHub Profile"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="github"
+                  class="w-7 h-7"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/danielriegoor"
+                target="_blank"
+                title="Instagram"
+                aria-label="My Instagram Profile"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="instagram"
+                  class="w-7 h-7"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/riegodaniel"
+                target="_blank"
+                title="Facebook"
+                aria-label="My Facebook Profile"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="facebook"
+                  class="w-7 h-7"></i
+              ></a>
+              <a
+                href="https://wa.me/message/NZN3JXOTE6FQD1"
+                target="_blank"
+                title="WhatsApp Direct"
+                aria-label="Contact-me on Whatsapp"
+                rel="noopener noreferrer"
+                class="text-slate-400 hover:text-slate-700 transition-colors"
+                ><i
+                  data-lucide="message-square-more"
+                  class="w-7 h-7"></i
+              ></a>
+            </div>
+          </div>
+        </aside>
 
-                    <div class="mt-8 border-t border-slate-200 pt-6 flex justify-center space-x-5">
-                        <a href="https://www.linkedin.com/in/danielriegoor/" target="_blank" title="LinkedIn" aria-label="My LinkedIn Profile" rel="noopener noreferrer" 
-                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
-                        <a href="https://github.com/danielriegoor/" target="_blank" title="GitHub" aria-label="My GitHub Profile" rel="noopener noreferrer" 
-                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="github" class="w-7 h-7"></i></a>
-                        <a href="https://www.instagram.com/danielriegoor" target="_blank" title="Instagram" aria-label="My Instagram Profile" rel="noopener noreferrer" 
-                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="instagram" class="w-7 h-7"></i></a>
-                        <a href="https://www.facebook.com/riegodaniel" target="_blank" title="Facebook" aria-label="My Facebook Profile" rel="noopener noreferrer" 
-                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="facebook" class="w-7 h-7"></i></a>
-                        <a href="https://wa.me/message/NZN3JXOTE6FQD1" target="_blank" title="WhatsApp" aria-label="Contact-me on Whatsapp" rel="noopener noreferrer" 
-                        class="text-slate-400 hover:text-slate-700 transition-colors"><i data-lucide="message-square-more" class="w-7 h-7"></i></a>
-                    </div>
-                </div>
-            </aside>
-
-            <main class="lg:w-2/3 xl:w-3/4">
-                <div class="space-y-8">
-                    <!-- PÁGINA: INÍCIO -->
-                    <div id="page-home" class="page-content space-y-8">
-                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                                <i data-lucide="user-round" class="w-6 h-6 mr-3 text-cyan-600"></i>
-                                <span data-key="aboutTitle"></span>
-                            </h2>
-                            <section class="space-y-4 leading-relaxed text-slate-600" data-key="aboutContent"></section>
-                        </article>
-                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                                <i data-lucide="sparkles" class="w-6 h-6 mr-3 text-cyan-600"></i>
-                                <span data-key="skillsTitle"></span>
-                            </h2>
-                            <section id="skills-container" class="flex flex-wrap gap-3"></section>
-                        </article>
-                    </div>
-                    <!-- PÁGINA: PORTFÓLIO -->
-                    <div id="page-portfolio" class="page-content space-y-8">
-                         <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                                <i data-lucide="folder-git-2" class="w-6 h-6 mr-3 text-cyan-600"></i>
-                                <span data-key="projectsTitle"></span>
-                            </h2>
-                            <div id="projects-container" class="space-y-6"></div>
-                        </article>
-                    </div>
-                    <!-- PÁGINA: BLOG -->
-                    <div id="page-blog" class="page-content space-y-8">
-                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                                <i data-lucide="notebook-pen" class="w-6 h-6 mr-3 text-cyan-600"></i>
-                                <span data-key="blogTitle"></span>
-                            </h2>
-                            <div id="blog-container" class="space-y-6"></div>
-                        </article>
-                    </div>
-                    <!-- PÁGINA: CONTATO -->
-                    <div id="page-contact" class="page-content space-y-8">
-                        <article class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                                <i data-lucide="mail-check" class="w-6 h-6 mr-3 text-cyan-600"></i>
-                                <span data-key="contactTitle"></span>
-                            </h2>
-                            <p class="mb-6 text-slate-600" data-key="contactIntro"></p>
-                            <div id="contact-container" class="space-y-4"></div>
-                        </article>
-                    </div>
-                </div>
-            </main>
-        </div>
+        <main class="lg:w-2/3 xl:w-3/4">
+          <div class="space-y-8">
+            <!-- PÁGINA: INÍCIO -->
+            <div
+              id="page-home"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="user-round"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="aboutTitle"></span>
+                </h2>
+                <section
+                  class="space-y-4 leading-relaxed text-slate-600"
+                  data-key="aboutContent"></section>
+              </article>
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="sparkles"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="skillsTitle"></span>
+                </h2>
+                <section
+                  id="skills-container"
+                  class="flex flex-wrap gap-3"></section>
+              </article>
+            </div>
+            <!-- PÁGINA: BLOG -->
+            <div
+              id="page-blog"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="notebook-pen"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="blogTitle"></span>
+                </h2>
+                <div
+                  id="blog-container"
+                  class="space-y-6"></div>
+              </article>
+            </div>
+            <!-- PÁGINA: CONTENT -->
+            <div
+              id="page-content"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="folder-git-2"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="contentTitle"></span>
+                </h2>
+                <div
+                  id="content-container"
+                  class="space-y-6"></div>
+              </article>
+            </div>
+            <!-- PÁGINA: DOCUMENTATION -->
+            <div
+              id="page-doc"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="folder-git-2"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="docTitle"></span>
+                </h2>
+                <div
+                  id="doc-container"
+                  class="space-y-6"></div>
+              </article>
+            </div>
+            <!-- PÁGINA: PROJETOS -->
+            <div
+              id="page-projects"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="folder-git-2"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="projectsTitle"></span>
+                </h2>
+                <div
+                  id="projects-container"
+                  class="space-y-6"></div>
+              </article>
+            </div>
+            <!-- PÁGINA: CONTATO -->
+            <div
+              id="page-contact"
+              class="page-content space-y-8">
+              <article
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="mail-check"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="contactTitle"></span>
+                </h2>
+                <p
+                  class="mb-6 text-slate-600"
+                  data-key="contactIntro"></p>
+                <div
+                  id="contact-container"
+                  class="space-y-4"></div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
 
     <!-- Carrega o script principal do aplicativo -->
-    <script src="./scripts/main.js" type="module"></script>
-</body>
+    <script
+      src="./scripts/main.js"
+      type="module"></script>
+  </body>
 </html>

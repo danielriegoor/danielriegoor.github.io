@@ -95,28 +95,7 @@ function renderContent(lang) {
             }, 150);
         }
     });
-
-    const skillsContainer = document.getElementById('skills-container');
-    if(skillsContainer) {
-        skillsContainer.innerHTML = content.skills.map(skill => `<span class="bg-cyan-100/60 text-cyan-800 text-sm font-medium px-3 py-1 
-            rounded-full">${skill}</span>`).join('');
-    }
-    
-    const projectsContainer = document.getElementById('projects-container');
-    if(projectsContainer) {
-        // A lógica para renderizar projetos também precisa ser ajustada para a descrição em array
-        projectsContainer.innerHTML = content.projects.map(p => {
-            const description = Array.isArray(p.description) ? p.description.join('') : p.description;
-            return `<div class="bg-white/90 p-4 rounded-lg border border-slate-200 hover:border-cyan-400 hover:shadow-md 
-            transition-all duration-300"><h3 class="font-bold text-lg text-slate-800">${p.title}</h3><p class="text-sm text-slate-500 mt-1 mb-3">
-            ${description}</p><div class="flex items-center space-x-4"><a href="${p.link}" target="_blank" rel="noopener noreferrer" 
-            class="inline-flex items-center text-sm text-cyan-600 hover:text-cyan-700 font-semibold">${content.viewProjectLink} 
-            <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a>${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener noreferrer" 
-            class="inline-flex items-center text-sm text-slate-500 hover:text-slate-800 font-semibold">
-            <i data-lucide="github" class="w-4 h-4 mr-1"></i> ${content.viewRepoLink}</a>` : ''}</div></div>`;
-        }).join('');
-    }
-
+    // ********* BLOG *********
     const blogContainer = document.getElementById('blog-container');
     if(blogContainer) {
         // A lógica para renderizar o blog também precisa ser ajustada para a descrição em array
@@ -166,6 +145,129 @@ function renderContent(lang) {
         }).join('');
     }
 
+       // ********* CONTENT *********
+    const contentContainer = document.getElementById('content-container');
+    if(contentContainer) {
+        // A lógica para renderizar o blog também precisa ser ajustada para a descrição em array
+        contentContainer.innerHTML = content.contentPosts.map(p => {
+                // 1. Inicia a variável que vai guardar o HTML do título
+    let titleHtml = '';
+
+    // 2. Verifica se o título é um array (nossa nova estrutura)
+    if (Array.isArray(p.title)) {
+        // 3. Se for um array, percorre cada "pedaço"
+        titleHtml = p.title.map(part => {
+            if (part.type === 'link') {
+                // Se o pedaço for um link, cria uma tag <a>
+                return `<a href="${part.url}" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:underline">${part.value}</a>`;
+            }
+            // Senão, apenas retorna o texto
+            return part.value;
+        }).join(''); // Junta todos os pedaços de HTML
+    } else {
+        // 4. Se não for um array, funciona como antes (para posts antigos)
+        titleHtml = p.title;
+    }
+    // LÓGICA NOVA PARA A DESCRIÇÃO (substitui a linha antiga)
+    let descriptionHtml = '';
+    if (Array.isArray(p.description) && typeof p.description[0] === 'object') {
+        descriptionHtml = p.description.map(part => {
+    if (part.type === 'link') {
+        return `<a href="${part.url}" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:underline font-semibold">${part.value}</a>`;
+    }
+    
+    // Se o valor do texto for um array, junte seus pedaços.
+    if (Array.isArray(part.value)) {
+        return part.value.join('');
+    }
+            return part.value;
+        }).join('');
+    } else {
+        descriptionHtml = Array.isArray(p.description) ? p.description.join('') : p.description;
+    }
+            return `<div class="bg-white/90 p-4 rounded-lg border border-slate-200
+             hover:border-cyan-400 hover:shadow-md transition-all duration-300"><h3 class="font-bold text-lg 
+             text-slate-800">${titleHtml}</h3><p class="text-sm text-slate-500 mt-1 mb-3">${descriptionHtml.replace(/\n/g, '<br>')}</p><a href="${p.link}"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center text-sm text-cyan-600 hover:text-cyan-700 font-semibold">${content.contentLink} 
+             <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a></div>`;
+        }).join('');
+    }
+
+       // ********* DOCUMENTATION *********
+    const docContainer = document.getElementById('doc-container');
+    if(docContainer) {
+        // A lógica para renderizar o blog também precisa ser ajustada para a descrição em array
+        docContainer.innerHTML = content.docPosts.map(p => {
+                // 1. Inicia a variável que vai guardar o HTML do título
+    let titleHtml = '';
+
+    // 2. Verifica se o título é um array (nossa nova estrutura)
+    if (Array.isArray(p.title)) {
+        // 3. Se for um array, percorre cada "pedaço"
+        titleHtml = p.title.map(part => {
+            if (part.type === 'link') {
+                // Se o pedaço for um link, cria uma tag <a>
+                return `<a href="${part.url}" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:underline">${part.value}</a>`;
+            }
+            // Senão, apenas retorna o texto
+            return part.value;
+        }).join(''); // Junta todos os pedaços de HTML
+    } else {
+        // 4. Se não for um array, funciona como antes (para posts antigos)
+        titleHtml = p.title;
+    }
+    // LÓGICA NOVA PARA A DESCRIÇÃO (substitui a linha antiga)
+    let descriptionHtml = '';
+    if (Array.isArray(p.description) && typeof p.description[0] === 'object') {
+        descriptionHtml = p.description.map(part => {
+    if (part.type === 'link') {
+        return `<a href="${part.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-600 hover:underline font-semibold">${part.value} <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a>`;
+    }
+    
+    // Se o valor do texto for um array, junte seus pedaços.
+    if (Array.isArray(part.value)) {
+        return part.value.join('');
+    }
+            return part.value;
+        }).join('');
+    } else {
+        descriptionHtml = Array.isArray(p.description) ? p.description.join('') : p.description;
+    }
+            return `<div class="bg-white/90 p-4 rounded-lg border border-slate-200
+             hover:border-cyan-400 hover:shadow-md transition-all duration-300"><h3 class="font-bold text-lg 
+             text-slate-800">${titleHtml}</h3><p class="text-sm text-slate-500 mt-1 mb-3">${descriptionHtml.replace(/\n/g, '<br>')}</p><a href="${p.link}"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center text-sm text-cyan-600 hover:text-cyan-700 font-semibold">${content.docLink} 
+             <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a></div>`;
+        }).join('');
+    }
+
+
+
+    // ********* SKILLS *********
+        const skillsContainer = document.getElementById('skills-container');
+    if(skillsContainer) {
+        skillsContainer.innerHTML = content.skills.map(skill => `<span class="bg-cyan-100/60 text-cyan-800 text-sm font-medium px-3 py-1 
+            rounded-full">${skill}</span>`).join('');
+    }
+    
+    // ********* PROJECTS *********
+    const projectsContainer = document.getElementById('projects-container');
+    if(projectsContainer) {
+        // A lógica para renderizar projetos também precisa ser ajustada para a descrição em array
+        projectsContainer.innerHTML = content.projects.map(p => {
+            const description = Array.isArray(p.description) ? p.description.join('') : p.description;
+            return `<div class="bg-white/90 p-4 rounded-lg border border-slate-200 hover:border-cyan-400 hover:shadow-md 
+            transition-all duration-300"><h3 class="font-bold text-lg text-slate-800">${p.title}</h3><p class="text-sm text-slate-500 mt-1 mb-3">
+            ${description}</p><div class="flex items-center space-x-4"><a href="${p.link}" target="_blank" rel="noopener noreferrer" 
+            class="inline-flex items-center text-sm text-cyan-600 hover:text-cyan-700 font-semibold">${content.viewProjectLink} 
+            <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></a>${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener noreferrer" 
+            class="inline-flex items-center text-sm text-slate-500 hover:text-slate-800 font-semibold">
+            <i data-lucide="github" class="w-4 h-4 mr-1"></i> ${content.viewRepoLink}</a>` : ''}</div></div>`;
+        }).join('');
+    }
+    // ********* CONTACT *********
 const contactContainer = document.getElementById('contact-container');
 if(contactContainer) {
     contactContainer.innerHTML = `<div class="flex items-center text-slate-600"><i data-lucide="mail" class="w-5 h-5 mr-3 text-cyan-600"></i><a href="mailto:${content.contactEmail}" class="hover:text-cyan-600 transition-colors">${content.contactEmail}</a></div><div class="flex items-center text-slate-600"><i data-lucide="phone" class="w-5 h-5 mr-3 text-cyan-600"></i><span>${content.contactPhone}</span></div><div class="flex items-center text-slate-600"><i data-lucide="message-square-more" class="w-5 h-5 mr-3 text-cyan-600"></i><a href="${content.contactWhatsapp}" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-600 transition-colors">WhatsApp</a></div>`;
