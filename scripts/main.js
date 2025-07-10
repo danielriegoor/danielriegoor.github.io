@@ -251,6 +251,64 @@ function renderContent(lang) {
         skillsContainer.innerHTML = content.skills.map(skill => `<span class="bg-cyan-100/60 text-cyan-800 text-sm font-medium px-3 py-1 
             rounded-full">${skill}</span>`).join('');
     }
+
+    // ********* UPDATES TICKER *********
+
+const tickerContent = document.getElementById('ticker-content');
+if (tickerContent) {
+    // ======== CONFIGURAÇÕES DO TICKER (EDITÁVEL) ========
+    // 1. Velocidade da animação em pixels por segundo.
+    const PIXELS_PER_SECOND = 90; 
+    // 2. Tempo desejado (em segundos) para a primeira atualização aparecer na tela.
+    const INITIAL_APPEARANCE_TIME_SECONDS = 11; 
+    // ======================================================
+
+    // Popula o conteúdo do ticker
+    const blogItems = content.blogPosts.map(p => ({ ...p, origin: content.navBlog }));
+    const contentItems = content.contentPosts.map(p => ({ ...p, origin: content.navContent }));
+    const docItems = content.docPosts.map(p => ({ ...p, origin: content.navDoc }));
+    const allPosts = [...blogItems, ...contentItems, ...docItems];
+    const tickerTitles = allPosts.map(post => {
+        const titleText = post.title.map(part => part.value).join('');
+        return `[${post.origin}] ${titleText}`;
+    });
+    tickerContent.innerHTML = tickerTitles.join(' &nbsp; • &nbsp; ');
+
+    // Lógica da Animação Dinâmica
+    // Usamos requestAnimationFrame para garantir que o DOM foi atualizado antes de medirmos a largura
+    requestAnimationFrame(() => {
+        const textWidth = tickerContent.offsetWidth;
+        const screenWidth = window.innerWidth;
+        
+        // Distância total que o texto percorre na animação (da borda direita até sumir na esquerda)
+        const totalDistance = screenWidth + textWidth;
+        
+        // Duração total da animação para manter a velocidade constante
+        const totalDuration = totalDistance / PIXELS_PER_SECOND;
+
+        // Calcula o tempo que o texto leva para cruzar a tela até aparecer
+        const actualTimeToAppear = screenWidth / PIXELS_PER_SECOND;
+
+        // Calcula o "salto no tempo" (delay negativo) para ajustar o início
+        // Se o tempo real for 4s e você quer 1.5s, o salto será de 2.5s
+        const negativeDelay = actualTimeToAppear - INITIAL_APPEARANCE_TIME_SECONDS;
+        
+        // Aplica os estilos da animação via JS
+        tickerContent.style.animationName = 'scroll-ticker';
+        tickerContent.style.animationTimingFunction = 'linear';
+        tickerContent.style.animationIterationCount = 'infinite';
+        tickerContent.style.animationDuration = `${totalDuration.toFixed(2)}s`;
+        // Aplica o delay negativo para a mágica acontecer!
+        tickerContent.style.animationDelay = `-${negativeDelay.toFixed(2)}s`;
+    });
+
+    // Lógica para o título da seção (opcional, mas mantém a consistência)
+    const updatesTitleEl = document.querySelector('#ticker-section [data-key="updatesTitle"]');
+    if (updatesTitleEl && content.updatesTitle) {
+        updatesTitleEl.textContent = content.updatesTitle;
+    }
+}
+
     
     // ********* PROJECTS *********
     const projectsContainer = document.getElementById('projects-container');

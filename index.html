@@ -120,6 +120,31 @@
         color: #0e7490;
         font-weight: 600;
       }
+      #ticker-container {
+        height: 40px; /* Altura da barra, ajuste se necessário */
+        display: flex;
+        align-items: center;
+      }
+
+      #ticker-content {
+        white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+      }
+
+      #ticker-container:hover
+        #ticker-content {
+        animation-play-state: paused; /* Pausa a animação ao passar o mouse */
+      }
+
+      @keyframes scroll-ticker {
+        0% {
+          /* Começa com o texto na borda direita da tela, e não "a 100% da largura do texto" de distância */
+          transform: translateX(100vw);
+        }
+        100% {
+          /* Termina quando o texto todo já passou para a esquerda */
+          transform: translateX(-100%);
+        }
+      }
     </style>
   </head>
   <body
@@ -332,6 +357,28 @@
                 <section
                   id="skills-container"
                   class="flex flex-wrap gap-3"></section>
+              </article>
+              <article
+                id="ticker-section"
+                class="bg-white/60 backdrop-blur-sm border border-slate-200/80 p-6 rounded-2xl shadow-lg">
+                <h2
+                  class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                  <i
+                    data-lucide="zap"
+                    class="w-6 h-6 mr-3 text-cyan-600"></i>
+                  <span
+                    data-key="updatesTitle"
+                    >Últimas
+                    Atualizações</span
+                  >
+                </h2>
+                <div
+                  id="ticker-container"
+                  class="bg-slate-100/80 rounded-lg p-2 overflow-hidden">
+                  <div
+                    id="ticker-content"
+                    class="text-red-500 font-semibold text-sm"></div>
+                </div>
               </article>
             </div>
             <!-- PÁGINA: BLOG -->
