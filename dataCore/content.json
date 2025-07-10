@@ -46,6 +46,23 @@
         "title": [
           {
             "type": "text",
+            "value": "Atualização do mailORganizer - 10/07/2025, 10:13(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Otimização através de API's de Streamings e melhorias na experiência do usuário. "
+            ]
+          }
+        ],
+        "link": "http://bit.ly/4lExwcc"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
             "value": "mailORganizer App - 05/07/2025, 11:16(GMT-3)"
           }
         ],
@@ -389,6 +406,23 @@
     "blogTitle": "Latest Articles",
     "readArticleLink": "Read article",
     "blogPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailORganizer Update - 10/07/2025, 10:13(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Optimization through Streaming APIs and improvements in user experience. "
+            ]
+          }
+        ],
+        "link": "http://bit.ly/4lExwcc"
+      },
       {
         "title": [
           {
