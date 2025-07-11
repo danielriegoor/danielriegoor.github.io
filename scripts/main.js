@@ -359,45 +359,47 @@ function setLanguage(lang) {
     renderContent(lang);
 }
 
-// --- LÓGICA DO CONTADOR DE VISITAS (VERSÃO FINAL COM API HITS) ---
+// --- LÓGICA DO CONTADOR DE VISITAS (VERSÃO FINAL COM API VisitorBadge) ---
 async function updateAndLogVisitCount() {
-    // Esta API usa a URL da página para criar um contador único.
-    // Usamos encodeURIComponent para garantir que a URL seja enviada corretamente.
-    const pageUrl = encodeURIComponent('https://danielriegoor.github.io/DR-Portifolio/');
-    
-    // A API é diferente para incrementar (incr) e para apenas obter (count).
-    // A flag 'json' nos dá o resultado em um formato que podemos usar.
-    const apiUrl = `https://hits.seeyoufarm.com/api/count/incr/json?url=${pageUrl}`;
+    // Usar um identificador simples e consistente para a sua página.
+    const pageId = 'danielriegoor.portfolio';
 
     const today = new Date().toISOString().split('T')[0];
     const lastVisitDate = localStorage.getItem('lastVisitDate');
     const shouldCountHit = lastVisitDate !== today;
 
+    // A URL é diferente para incrementar (count=1) e para apenas obter (count=0).
+    const apiUrl = `https://api.visitorbadge.io/api/visitors?path=${pageId}&count=${shouldCountHit ? 1 : 0}&format=json`;
+
     if (shouldCountHit) {
         console.log('Registrando nova visita única para o dia...');
-        try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) {
-                throw new Error(`Status ${response.status}`);
-            }
-            const data = await response.json();
-            
-            // O valor vem no campo 'value'.
-            const count = data.value;
-
-            console.log(`✅ Sucesso! Total de visitas: ${count}`);
-            
-            // Armazena a data da visita para não contar novamente hoje.
-            localStorage.setItem('lastVisitDate', today);
-
-        } catch (error) {
-            console.error(`❌ Falha ao registrar visita com a API Hits: ${error.message}`);
-        }
     } else {
-        console.log('Visita já registrada hoje. A contagem não será incrementada.');
-        // Opcional: se quiser apenas ver o número sem incrementar, teríamos que fazer
-        // uma chamada diferente, mas para manter a simplicidade, vamos apenas registrar
-        // a visita uma vez por dia.
+        console.log('Visita já registrada hoje. Buscando contagem atual...');
+    }
+
+    try {
+        const response = await fetch(apiUrl, { cache: 'no-cache' });
+        if (!response.ok) {
+            throw new Error(`O servidor respondeu com o status ${response.status}`);
+        }
+        const data = await response.json();
+
+        // O valor vem no campo 'total'.
+        const count = data.total;
+
+        if (typeof count === 'undefined') {
+            throw new Error('Formato de resposta da API inesperado.');
+        }
+
+        console.log(`✅ Sucesso! Total de visitas: ${count}`);
+
+        // Armazena a data da visita apenas se o hit foi bem-sucedido.
+        if (shouldCountHit) {
+            localStorage.setItem('lastVisitDate', today);
+        }
+
+    } catch (error) {
+        console.error(`❌ Falha ao comunicar com a API de contagem: ${error.message}`);
     }
 }
 
@@ -416,9 +418,6 @@ async function init() {
     router();
     startAnimation();
     lucide.createIcons();
-    
-    // Adiciona a chamada para o contador de visitas
-    await updateAndLogVisitCount();
     
     // Adiciona a chamada para o contador de visitas
     await updateAndLogVisitCount();
