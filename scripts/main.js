@@ -419,6 +419,9 @@ async function init() {
     
     // Adiciona a chamada para o contador de visitas
     await updateAndLogVisitCount();
+    
+    // Adiciona a chamada para o contador de visitas
+    await updateAndLogVisitCount();
 }
 
 init();
