@@ -359,6 +359,68 @@ function setLanguage(lang) {
     renderContent(lang);
 }
 
+// --- LÓGICA DO CONTADOR DE VISITAS (VERSÃO FINAL E ROBUSTA) ---
+async function updateAndLogVisitCount() {
+    // Define um namespace e uma chave única para o seu contador.
+    const namespace = 'danielriegoor';
+    const key = 'portfolio';
+
+    const apiEndpoints = [
+        { 
+            name: 'Counter.dev',
+            // A URL é diferente para incrementar (up) e para obter (get).
+            getUrl: (isHit) => `https://counter.dev/api/${namespace}/${key}/${isHit ? 'up' : 'get'}`,
+            // O valor vem no campo 'count'
+            getCount: (data) => data.count,
+        },
+        { 
+            name: 'CountAPI',
+            getUrl: (isHit) => `https://api.countapi.xyz/${isHit ? 'hit' : 'get'}/${namespace}/${key}`,
+            getCount: (data) => data.value,
+        }
+    ];
+
+    const today = new Date().toISOString().split('T')[0];
+    const lastVisitDate = localStorage.getItem('lastVisitDate');
+    const shouldCountHit = lastVisitDate !== today;
+
+    if (shouldCountHit) {
+        console.log('Registrando nova visita única para o dia...');
+    } else {
+        console.log('Visita já registrada hoje. Buscando contagem atual...');
+    }
+
+    let success = false;
+    for (const api of apiEndpoints) {
+        try {
+            const url = api.getUrl(shouldCountHit);
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Status ${response.status}`);
+            }
+            const data = await response.json();
+            
+            const count = api.getCount(data);
+
+            console.log(`✅ Sucesso com a API [${api.name}]. Total de visitas: ${count}`);
+            
+            if (shouldCountHit) {
+                localStorage.setItem('lastVisitDate', today);
+            }
+            
+            success = true;
+            break; 
+        } catch (error) {
+            console.warn(`⚠️ Falha ao conectar com a API [${api.name}]. Tentando próxima... Erro: ${error.message}`);
+        }
+    }
+
+    if (!success) {
+        console.error('❌ Todas as APIs de contagem falharam. Não foi possível registrar ou obter a contagem de visitas.');
+    }
+}
+
+
 // Event Listeners
 window.addEventListener('hashchange', router);
 window.addEventListener('resize', startAnimation);
@@ -373,6 +435,9 @@ async function init() {
     router();
     startAnimation();
     lucide.createIcons();
+    
+    // Adiciona a chamada para o contador de visitas
+    await updateAndLogVisitCount();
 }
 
 init();
