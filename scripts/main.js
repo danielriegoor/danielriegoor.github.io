@@ -359,6 +359,49 @@ function setLanguage(lang) {
     renderContent(lang);
 }
 
+// --- LÓGICA DO CONTADOR DE VISITAS (VERSÃO FINAL COM API HITS) ---
+async function updateAndLogVisitCount() {
+    // Esta API usa a URL da página para criar um contador único.
+    // Usamos encodeURIComponent para garantir que a URL seja enviada corretamente.
+    const pageUrl = encodeURIComponent('https://danielriegoor.github.io/DR-Portifolio/');
+    
+    // A API é diferente para incrementar (incr) e para apenas obter (count).
+    // A flag 'json' nos dá o resultado em um formato que podemos usar.
+    const apiUrl = `https://hits.seeyoufarm.com/api/count/incr/json?url=${pageUrl}`;
+
+    const today = new Date().toISOString().split('T')[0];
+    const lastVisitDate = localStorage.getItem('lastVisitDate');
+    const shouldCountHit = lastVisitDate !== today;
+
+    if (shouldCountHit) {
+        console.log('Registrando nova visita única para o dia...');
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`Status ${response.status}`);
+            }
+            const data = await response.json();
+            
+            // O valor vem no campo 'value'.
+            const count = data.value;
+
+            console.log(`✅ Sucesso! Total de visitas: ${count}`);
+            
+            // Armazena a data da visita para não contar novamente hoje.
+            localStorage.setItem('lastVisitDate', today);
+
+        } catch (error) {
+            console.error(`❌ Falha ao registrar visita com a API Hits: ${error.message}`);
+        }
+    } else {
+        console.log('Visita já registrada hoje. A contagem não será incrementada.');
+        // Opcional: se quiser apenas ver o número sem incrementar, teríamos que fazer
+        // uma chamada diferente, mas para manter a simplicidade, vamos apenas registrar
+        // a visita uma vez por dia.
+    }
+}
+
+
 // Event Listeners
 window.addEventListener('hashchange', router);
 window.addEventListener('resize', startAnimation);
@@ -373,6 +416,9 @@ async function init() {
     router();
     startAnimation();
     lucide.createIcons();
+    
+    // Adiciona a chamada para o contador de visitas
+    await updateAndLogVisitCount();
 }
 
 init();
