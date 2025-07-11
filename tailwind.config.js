@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // O Tailwind irá procurar por classes nestes arquivos para otimizar o CSS final.
+  content: [
+    "./index.html",
+    "./scripts/main.js"
+  ],
   theme: {
     extend: {
+      // Aqui definimos sua cor personalizada para o tema claro.
       colors: {
-        // Adicionando a cor primária do novo tema
-        'primary-dark': '#08185c',
+        'primary-light': 'rgb(203, 221, 236)',
       },
     },
   },
