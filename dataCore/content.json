@@ -46,6 +46,23 @@
         "title": [
           {
             "type": "text",
+            "value": "Sprint da Semana - 14/07/2025, 14/07/2025, 08:13"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Cronograma da semana com Metodologia Ágil e DevOps. "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lLn6Yq"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
             "value": "Atualização do mailORganizer - 10/07/2025, 10:13(GMT-3)"
           }
         ],
@@ -406,6 +423,23 @@
     "blogTitle": "Latest Articles",
     "readArticleLink": "Read article",
     "blogPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "This week Sprint - 14/07/2025, 14/07/2025, 08:13"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Weekly schedule with Agile Methodology and DevOps. "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lLn6Yq"
+      },
       {
         "title": [
           {
