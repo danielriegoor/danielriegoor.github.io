@@ -8,5 +8,7 @@ Sou Daniel Riêgo:  Desenvolvedor Full Stack e futuros Arquitetos de Software, a
 Encontre artigos, blogs, códigos para Fork e informações úteis para auxiliar em sua carreira como DEV ou para parcerias.
 
 Conecte-se comigo:
-o	LinkedIn - https://www.linkedin.com/in/danielriegoor/
-o	Portfólio - https://daniel.riegos.dev
+
+LinkedIn - https://www.linkedin.com/in/danielriegoor/
+
+Portfólio - https://daniel.riegos.dev
