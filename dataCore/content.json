@@ -1,0 +1,684 @@
+{
+  "pt": {
+    "pageTitle": "Daniel Riêgo | Desenvolvedor Full Stack",
+    "jobTitle": "Desenvolvedor Full Stack",
+    "location": "Brasil",
+    "navHome": "Início",
+    "navProjects": "Projetos",
+    "navDoc": "Documentação",
+    "navContent": "Conteúdo",
+    "navBlog": "Blog",
+    "navContact": "Contato",
+    "aboutTitle": "Sobre Mim",
+    "aboutContent": [
+      "Desenvolvedor Full Stack com sólida experiência em criar aplicações web robustas e escaláveis.",
+      "\n\n",
+      "Apaixonado por tecnologia e por transformar ideias em soluções digitais eficientes, com foco em performance e na experiência do usuário.",
+      " Estou sempre em busca de novos desafios e aprendizados para aprimorar minhas habilidades.\n\n",
+      " Encontre fontes para acelar sua carreira em DEV no menu 'Conteúdo'."
+    ],
+    "skillsTitle": "Principais Habilidades",
+    "skills": [
+      "CI/CD",
+      "CSS3",
+      "Git",
+      "GitCLI",
+      "GitHub Actions",
+      "GitHub",
+      "HTML5",
+      "JavaScript (ES6+)",
+      "JIT",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "React.js",
+      "SPA",
+      "Tailwind CSS",
+      "TypeScript",
+      "UI/UX",
+      "JSON",
+      "Vanilla JS"
+    ],
+    "blogTitle": "Últimos Artigos",
+    "readArticleLink": "Leia o artigo",
+    "blogPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Sprint da Semana - 14/07/2025, 14/07/2025, 08:13"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Cronograma da semana com Metodologia Ágil e DevOps. "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lLn6Yq"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Atualização do mailORganizer - 10/07/2025, 10:13(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Otimização através de API's de Streamings e melhorias na experiência do usuário. "
+            ]
+          }
+        ],
+        "link": "http://bit.ly/4lExwcc"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailORganizer App - 05/07/2025, 11:16(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "mailORganizer: E-mails organizados com o poder de Python e IA (Gemini 2.5). "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4kpRN4n"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Evoluindo no DEV - 01/07/2025, 18:44(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Jornada Full Stack: ",
+              "Um artigo sobre evolução de carreira e as linguagens essenciais para todo DEV."
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lBUil1"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "#WorkHard && #WorkSmart - 17/06/2025, 8:30(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Work hard vs. work smart: ",
+              " insights e lições da nossa jornada DEV."
+            ]
+          },
+          {
+            "type": "text",
+            "value": " Nos próximos Links, você encontra nossos perfis do LinkedIn.\n\n"
+          },
+          {
+            "type": "link",
+            "value": " Daniel Riêgo ",
+            "url": "https://www.linkedin.com/in/danielriegoor/"
+          },
+          {
+            "type": "text",
+            "value": " | "
+          },
+          {
+            "type": "link",
+            "value": " Tiago Riêgo ",
+            "url": "https://www.linkedin.com/in/tiagoriegodr/"
+          }
+        ],
+        "link": "https://bit.ly/3TZ1ID8"
+      }
+    ],
+    "contentTitle": "Conteúdo",
+    "contentLink": "Acesse",
+    "contentPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "#WorkHard && #WorkSmart - 17/06/2025, 8:30(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Work hard vs. work smart: ",
+              " insights e lições da nossa jornada DEV."
+            ]
+          },
+          {
+            "type": "text",
+            "value": " Nos próximos Links, você encontra nossos perfis do LinkedIn.\n\n"
+          },
+          {
+            "type": "link",
+            "value": " Daniel Riêgo ",
+            "url": "https://www.linkedin.com/in/danielriegoor/"
+          },
+          {
+            "type": "text",
+            "value": " | "
+          },
+          {
+            "type": "link",
+            "value": " Tiago Riêgo ",
+            "url": "https://www.linkedin.com/in/tiagoriegodr/"
+          }
+        ],
+        "link": "https://bit.ly/3TZ1ID8"
+      }
+    ],
+    "docTitle": "Documentação",
+    "docLink": "Leia a documentação",
+    "docPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "#WorkHard && #WorkSmart - 17/06/2025, 8:30(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Work hard vs. work smart: ",
+              " insights e lições da nossa jornada DEV."
+            ]
+          },
+          {
+            "type": "text",
+            "value": " Nos próximos Links, você encontra nossos perfis do LinkedIn.\n\n"
+          },
+          {
+            "type": "link",
+            "value": " Daniel Riêgo ",
+            "url": "https://www.linkedin.com/in/danielriegoor/"
+          },
+          {
+            "type": "text",
+            "value": " | "
+          },
+          {
+            "type": "link",
+            "value": " Tiago Riêgo ",
+            "url": "https://www.linkedin.com/in/tiagoriegodr/"
+          }
+        ],
+        "link": "https://bit.ly/3TZ1ID8"
+      }
+    ],
+    "contentTitle": "Table of contents",
+    "contentLink": "Acesse",
+    "contentPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Udemy"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Uma plataforma completa de cursos online, ",
+              " Inscreva-se e ganhe descontos no seu primeiro acesso!"
+            ]
+          }
+        ],
+        "link": "https://www.udemy.com/"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "W3Schools"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Um vasto acervo de tutoriais gratuitos e referências sobre desenvolvimento web, incluindo HTML, CSS, JS, NodeJS, Python, SQL, React e muito mais!",
+              " Inscreva-se para salvar seu progresso!"
+            ]
+          }
+        ],
+        "link": "https://www.w3schools.com/"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Youtube - @_vidafullstack"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              " Canal do YT de Denner Torquatte, focado no desenvolvimento Full Stack. ",
+              " Lá você encontrará uma grande variedade de tutoriais!"
+            ]
+          }
+        ],
+        "link": "https://www.youtube.com/@_vidafullstack"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Youtube - @ONovoProgramador"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Este é o canal do Vitor, com muitas dicas excelentes! \n\n",
+              "Encontre dicas sobre DEV e inclusive, como melhorar seu perfil do LinkedIn!"
+            ]
+          }
+        ],
+        "link": "https://www.youtube.com/@ONovoProgramador"
+      }
+    ],
+    "docTitle": "Documentation",
+    "docLink": "Leia a documentação",
+    "docPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailOrganizer - OneClick Tool"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "mailOrganizer: Sua caixa de entrada do Gmail a um clique da organização total! ",
+              " Experimente! \n\n"
+            ]
+          },
+          {
+            "type": "link",
+            "value": " Acesse a ferramenta",
+            "url": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/"
+          }
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/doCmailOrganizer.html"
+      }
+    ],
+    "projectsTitle": "Projetos em Destaque",
+    "viewProjectLink": "Ver projeto",
+    "viewRepoLink": "Repositório",
+    "projects": [
+      {
+        "title": "mailOrganizer - OneClick Tool",
+        "description": [
+          "Sua caixa de entrada do Gmail a um clique da organização completa! ",
+          "Experimente! "
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
+      {
+        "title": "Portifólio - Daniel Riêgo | Full Stack",
+        "description": [
+          "O código por trás desta página. ",
+          "Sinta-se à vontade para explorar. "
+        ],
+        "link": "https://danielriegoor.github.io/DR-Portifolio/",
+        "repo": "https://github.com/danielriegoor/DR-Portifolio"
+      },
+      {
+        "title": "forkDRcodes - Coleção de Códigos",
+        "description": [
+          "Meu toolkit de desenvolvedor: ",
+          "Coleções de códigos, scripts e configurações reutilizáveis."
+        ],
+        "link": "https://github.com/danielriegoor/forkDRcodes",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
+      {
+        "title": "Dashboard Financeiro com Next.js",
+        "description": [
+          "Dashboard financeiro interativo em Next.js para uma análise visual e intuitiva de dados. "
+        ],
+        "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard",
+        "repo": "https://github.com/danielriegoor/nextjs-dashboard"
+      }
+    ],
+    "contactTitle": "Entre em Contato",
+    "contactIntro": [
+      "Estou disponível para novas oportunidades e colaborações. ",
+      "Sinta-se à vontade para me contatar através dos canais abaixo."
+    ],
+    "contactPhone": "+55 (31) 99378-9275",
+    "contactEmail": "danielriegoor@gmail.com",
+    "contactWhatsapp": "https://wa.me/message/NZN3JXOTE6FQD1"
+  },
+  "en": {
+    "pageTitle": "Daniel Riêgo | Full Stack Developer",
+    "jobTitle": "Full Stack Developer",
+    "location": "Brazil",
+    "navHome": "Home",
+    "navProjects": "Projects",
+    "navContent": "Content",
+    "navDoc": "Documentation",
+    "navBlog": "Blog",
+    "navContact": "Contact",
+    "aboutTitle": "About Me",
+    "aboutContent": [
+      "Full Stack Developer with solid experience in creating robust and scalable web applications.",
+      "\n\n",
+      "Passionate about technology and turning ideas into efficient digital solutions, focusing on performance and user experience.",
+      " I am always seeking new challenges and learning opportunities to enhance my skills.\n\n",
+      " Find study sources to upgrade your DEV career at 'Content' menu."
+    ],
+    "skillsTitle": "Main Skills",
+    "skills": [
+      "CI/CD",
+      "CSS3",
+      "Git",
+      "GitCLI",
+      "GitHub Actions",
+      "GitHub",
+      "HTML5",
+      "JavaScript (ES6+)",
+      "JIT",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "React.js",
+      "SPA",
+      "Tailwind CSS",
+      "TypeScript",
+      "UI/UX",
+      "JSON",
+      "Vanilla JS"
+    ],
+    "blogTitle": "Latest Articles",
+    "readArticleLink": "Read article",
+    "blogPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "This week Sprint - 14/07/2025, 14/07/2025, 08:13"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Weekly schedule with Agile Methodology and DevOps. "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lLn6Yq"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailORganizer Update - 10/07/2025, 10:13(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Optimization through Streaming APIs and improvements in user experience. "
+            ]
+          }
+        ],
+        "link": "http://bit.ly/4lExwcc"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailORganizer App - 07/05/2025, 11:16(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "mailORganizer: Smart email organization powered by Python & AI (Gemini 2.5). "
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4kpRN4n"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Leveling Up as a Developer  - 07/01/2025, 18:44(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "The Full-Stack Journey:",
+              "An article on dev career growth and the essential languages."
+            ]
+          }
+        ],
+        "link": "https://bit.ly/4lBUil1"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "#WorkHard && #WorkSmart - 06/17/2025, 8:30(GMT-3)"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Work hard vs. work smart: ",
+              "insights and lessons from our dev journey."
+            ]
+          },
+          {
+            "type": "text",
+            "value": " Find our LinkedIn profiles below. \n\n"
+          },
+          {
+            "type": "link",
+            "value": " Daniel Riêgo ",
+            "url": "https://www.linkedin.com/in/danielriegoor/"
+          },
+          {
+            "type": "text",
+            "value": " | "
+          },
+          {
+            "type": "link",
+            "value": " Tiago Riêgo ",
+            "url": "https://www.linkedin.com/in/tiagoriegodr/"
+          }
+        ],
+        "link": "https://bit.ly/3TZ1ID8"
+      }
+    ],
+    "contentTitle": "Table of contents",
+    "contentLink": "Access now",
+    "contentPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Udemy"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "A wide open platform for online courses, ",
+              " Subscript and have disccounts at first access!"
+            ]
+          }
+        ],
+        "link": "https://www.udemy.com/"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "W3Schools"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "A wide range of free tutorials and references on web development topics, including  - HTML, CSS, JS, NodeJS, Python, SQL, React & more!",
+              " Subscript to save your progress!"
+            ]
+          }
+        ],
+        "link": "https://www.w3schools.com/"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Youtube Chanel - @_vidafullstack"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "Denner Torquatte YT channel, focused on Full Stack development. ",
+              " You can find a wide range of tutorials in there!"
+            ]
+          }
+        ],
+        "link": "https://www.youtube.com/@_vidafullstack"
+      },
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "Youtube Chanel - @ONovoProgramador"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "This is Vitor YT channel, wich has a lot of goog tips! ",
+              " There you find inclusive, LinkedIn tips, and more!"
+            ]
+          }
+        ],
+        "link": "https://www.youtube.com/@ONovoProgramador"
+      }
+    ],
+    "docTitle": "Documentation",
+    "docLink": "Read the documentation",
+    "docPosts": [
+      {
+        "title": [
+          {
+            "type": "text",
+            "value": "mailOrganizer - OneClick Tool"
+          }
+        ],
+        "description": [
+          {
+            "type": "text",
+            "value": [
+              "mailOrganizer: Your Gmail mailbox is one click away from complete organization! ",
+              " Try it out! \n\n"
+            ]
+          },
+          {
+            "type": "link",
+            "value": " Access the tool",
+            "url": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/"
+          }
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/doCmailOrganizer.html"
+      }
+    ],
+    "projectsTitle": "Featured Projects",
+    "viewProjectLink": "View project",
+    "viewRepoLink": "Repository",
+    "projects": [
+      {
+        "title": "mailOrganizer - OneClick Tool",
+        "description": [
+          "Your Gmail mailbox is one click away!",
+          "Try it on!"
+        ],
+        "link": "https://danielriegoor.github.io/forkDRcodes/mailOrganizer/",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
+      {
+        "title": "Portfolio - Daniel Riêgo | Full Stack",
+        "description": [
+          "The code for this very portfolio. ",
+          "Go ahead, explore the source."
+        ],
+        "link": "https://danielriegoor.github.io/DR-Portifolio/",
+        "repo": "https://github.com/danielriegoor/DR-Portifolio"
+      },
+      {
+        "title": "forkDRcodes - Code Collection",
+        "description": [
+          "My developer toolkit: ",
+          "Collections of reusable code, scripts, and configs."
+        ],
+        "link": "https://github.com/danielriegoor/forkDRcodes",
+        "repo": "https://github.com/danielriegoor/forkDRcodes"
+      },
+      {
+        "title": "Financial Dashboard with Next.js",
+        "description": [
+          "Interactive financial dashboard built with Next.js for intuitive data visualization. "
+        ],
+        "link": "https://nextjs-dashboard-git-master-daniel-riegos-projects.vercel.app/dashboard",
+        "repo": "https://github.com/danielriegoor/nextjs-dashboard"
+      }
+    ],
+    "contactTitle": "Get in Touch",
+    "contactIntro": [
+      "I am available for new opportunities and collaborations. ",
+      "Feel free to contact me through the channels below."
+    ],
+    "contactPhone": "+55 (31) 99378-9275",
+    "contactEmail": "danielriegoor@gmail.com",
+    "contactWhatsapp": "https://wa.me/message/NZN3JXOTE6FQD1"
+  }
+}
