@@ -1,0 +1,45 @@
+# Nome do seu Workflow, aparecerá na aba "Actions"
+name: Build and Deploy to GitHub Pages
+
+# Gatilho (Trigger): Este workflow vai rodar sempre que você fizer um 'push' na branch 'main'
+on:
+  push:
+    branches:
+      - main
+
+# Permissões: Garante que o workflow tenha as permissões corretas para publicar a página
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tarefas (Jobs): A sequência de passos que o workflow vai executar
+jobs:
+  # Define um único job chamado 'deploy'
+  deploy:
+    # O ambiente de deploy será o do GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # O workflow rodará em um servidor virtual (runner) com a versão mais recente do Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # Passo 1: Clona o seu repositório para o 'runner' ter acesso aos seus arquivos (index.html, etc.)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Passo 2: Configura o ambiente para o deploy no GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Passo 3: Cria o "artefato" (um pacote com os arquivos do seu site) para o deploy
+      - name: Build and Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Define o caminho de onde os arquivos do site estão. '.' significa a raiz do projeto.
+          path: '.'
+
+      # Passo 4: Realiza o deploy final no GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
